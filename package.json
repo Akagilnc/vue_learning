@@ -1,0 +1,9 @@
+{
+  "name": "vue-learning",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "vue": "^2.2.6",
+    "vue-resource": "^1.2.1"
+  }
+}
