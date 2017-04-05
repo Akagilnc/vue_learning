@@ -1,4 +1,4 @@
-new Vue({
+var vm = new Vue({
   // We want to target the div with an id of 'events'
   el: '#events',
   data: {
@@ -7,7 +7,7 @@ new Vue({
   },
 
   // Anythig within the ready function will run when the application loads
-  ready: function () {
+  mounted: function () {
     //When the application loads, we want to call the method that initializes some data
     this.fetchEvents();
   },
@@ -35,18 +35,29 @@ new Vue({
           date: '2016-03-11'
         }
       ];
-      //$set is a convenience method provided by Vue that is similar to pushing data
+
+      // $set is a convenience method provided by Vue that is similar to pushing data
       // onto an array
-      this.$set('event_list', event_list);
+      this.event_list = event_list
+      //this.$set('event_list', event_list);
     },
 
-    //Adds an event to the existing events array
+    // Adds an event to the existing events array
     addEvent: function () {
       if(this.event.name){
         this.event_list.push(this.event);
         this.event = { name: '', description: '', date: ''};
       }
 
+    },
+
+    // Remove is a Vue convenience method similar to splice
+    deleteEvent: function (index) {
+      if(confirm("Are you sure you want to delete this event?")){
+        this.event_list.splice(index, 1)
+      }
+
     }
+
   }
 });
