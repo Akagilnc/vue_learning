@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="exercise">
-   <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
+    <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
     <p v-once>VueJS is pretty cool - {{ name }} ({{ age }})</p>
     <!-- 2) Output your age, multiplied by 3 -->
     <p> {{ age3X() }} </p>
@@ -18,24 +18,21 @@
 </div>
 
 <script>
-    new Vue({
-      el: '#exercise',
-      data: {
-        name: 'Deron',
-        age: 37,
-        img_src: 'https://avatars1.githubusercontent.com/u/4053518?v=3&s=400',
-        count: 1
-
-
+  new Vue({
+    el: '#exercise',
+    data: {
+      name: 'Deron',
+      age: 37,
+      img_src: 'https://avatars1.githubusercontent.com/u/4053518?v=3&s=400',
+      count: 1
+    },
+    methods: {
+      age3X: function () {
+        return this.age * 3;
       },
-      methods: {
-        age3X: function () {
-          return this.age * 3;
-        },
-        randomNum: function () {
-          return Math.random()
-        },
-      }
-
-    })
+      randomNum: function () {
+        return Math.random()
+      },
+    }
+  })
 </script>
