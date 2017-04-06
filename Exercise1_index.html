@@ -23,14 +23,14 @@
       data: {
         name: 'Deron',
         age: 37,
-        img_src: 'https://avatars1.githubusercontent.com/u/4053518?v=3&s=400'
+        img_src: 'https://avatars1.githubusercontent.com/u/4053518?v=3&s=400',
+        count: 1
+
 
       },
       methods: {
         age3X: function () {
-          this.age = this.age * 1//37
-          this.age = this.age * 3//1.7162071440375984e+50
-          return this.age
+          return this.age * 3;
         },
         randomNum: function () {
           return Math.random()
